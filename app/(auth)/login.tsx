@@ -5,11 +5,19 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useAuth } from "../../src/context/AuthContext";
 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { login } = useAuth();
+
+  async function handleLogin() {
+    await login(email, password);
+    router.replace('/(app)/dashboard');
+  }
 
   return (
     <SafeAreaView

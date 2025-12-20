@@ -5,11 +5,21 @@ import { router } from 'expo-router'
 import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useAuth } from "../../src/context/AuthContext"
+
 
 
 export default function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const { register } = useAuth();
+    const handleSignup = async () => {
+        await register(email, password);
+        alert("Successful Signup, add Validation next my boy")
+        router.replace('/(app)/dashboard');
+    }
+
 
     return (
         <SafeAreaView
@@ -36,7 +46,7 @@ export default function Signup() {
 
                     <Text onPress={() => { alert("You dey forget Password ke?") }} style={stylesheet.forgotPassword}>Forgot Password?</Text>
 
-                    <TouchableOpacity style={stylesheet.button} onPress={() => { alert(`${email} + ${password}`) }}>
+                    <TouchableOpacity style={stylesheet.button} onPress={() => { handleSignup() }}>
                         <Text style={stylesheet.buttonText}>Sign Up</Text>
                     </TouchableOpacity>
 
