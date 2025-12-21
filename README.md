@@ -1,50 +1,97 @@
-# Welcome to your Expo app 👋
+# ApplyFlow Mobile App 🚀
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+ApplyFlow is a mobile application that helps users manage, track, and stay on top of their job applications with a clean, intuitive interface.
 
-## Get started
+🌟 Features
 
-1. Install dependencies
+✅ View, add, edit, and delete job applications
 
-   ```bash
-   npm install
-   ```
+✅ Track application statuses: Applied, Interviewing, Offer, Rejected
 
-2. Start the app
+✅ User authentication (signup/login)
 
-   ```bash
-   npx expo start
-   ```
+✅ Email notifications for deadlines and reminders
 
-In the output, you'll find options to open the app in a
+✅ Smooth animations and responsive design for iOS & Android
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+🛠 Technologies Used
 
-## Get a fresh project
+Framework: React Native (Expo)
 
-When you're ready, run:
+Language: TypeScript
 
-```bash
-npm run reset-project
-```
+UI & Styling: React Native Stylesheet
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Navigation: React Navigation
 
-## Learn more
+State Management: Context API 
 
-To learn more about developing your project with Expo, look at the following resources:
+Networking: Axios 
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Backend: Connects to ApplyFlow-Backend <https://github.com/ronaldkelechi11/applyflow-backend>
 
-## Join the community
 
-Join our community of developers creating universal apps.
+## 🚀 Getting Started
+Prerequisites
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Node.js >= 18
+
+npm or yarn
+
+Expo CLI: npm install -g expo-cli
+
+Android Studio or Xcode for simulator testing, or a physical device with Expo Go installed
+
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/ronaldkelechi11/applyflow.git
+cd applyflow
+
+
+Install dependencies:
+
+npm install
+### or
+yarn install
+
+
+Running the App
+
+Start the Expo development server:
+
+expo start
+
+
+Open the app on a device or simulator:
+
+Scan QR code with Expo Go app
+
+Or run on simulator:
+
+# iOS
+i
+# Android
+a
+
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repo
+
+Create a branch: git checkout -b feature-name
+
+Make changes & commit: git commit -m "Add feature"
+
+Push to branch: git push origin feature-name
+
+Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE
+ file for details.
