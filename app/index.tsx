@@ -1,6 +1,23 @@
-import { Redirect } from 'expo-router'
-import React from 'react'
+import { getStoredTokens, initializeAuth } from '@/src/api/client';
+import { router } from 'expo-router';
+import { useEffect } from 'react';
+import { View } from 'react-native';
 
 export default function Index() {
-    return <Redirect href={"/(auth)/login"} />
+    useEffect(() => {
+        checkAuthStatus();
+    }, []);
+
+    const checkAuthStatus = async () => {
+        await initializeAuth();
+        const { accessToken } = await getStoredTokens();
+
+        if (accessToken) {
+            router.replace('/(app)/dashboard');
+        } else {
+            router.replace('/(auth)/login');
+        }
+    };
+
+    return <View />;
 }

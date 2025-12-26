@@ -68,7 +68,7 @@ const stylesheet = StyleSheet.create({
     inputWrapper: {
         flexDirection: 'row',
         alignItems: 'center',
-        borderColor: 'black',
+        borderColor: myTheme.colors.gray,
         borderWidth: 1,
         backgroundColor: 'white',
         borderRadius: 24,

@@ -1,22 +1,29 @@
 import InputField from "@/components/InputField";
 import { myTheme } from "@/components/theme";
+import { login } from "@/src/api/client";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { router } from "expo-router";
 import { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useAuth } from "../../src/context/AuthContext";
 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   async function handleLogin() {
-    await login(email, password);
-    router.replace('/(app)/dashboard');
+    try {
+      setLoading(true);
+      await login(email, password);
+      router.replace('/(app)/dashboard');
+    } catch (error) {
+      alert('Login failed. Please try again.');
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -44,8 +51,8 @@ export default function Login() {
 
           <Text onPress={() => { alert("You dey forget Password ke?") }} style={stylesheet.forgotPassword}>Forgot Password?</Text>
 
-          <TouchableOpacity style={stylesheet.button} onPress={() => { alert(`${email} + ${password}`) }}>
-            <Text style={stylesheet.buttonText}>Log In</Text>
+          <TouchableOpacity style={stylesheet.button} onPress={handleLogin} disabled={loading}>
+            <Text style={stylesheet.buttonText}>{loading ? 'Logging In...' : 'Log In'}</Text>
           </TouchableOpacity>
 
 
