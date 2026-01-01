@@ -1,7 +1,7 @@
 import { getStoredTokens, initializeAuth } from '@/src/api/client';
 import { router } from 'expo-router';
 import { useEffect } from 'react';
-import { View } from 'react-native';
+import { StatusBar } from 'react-native';
 
 export default function Index() {
     useEffect(() => {
@@ -19,5 +19,5 @@ export default function Index() {
         }
     };
 
-    return <View />;
+    return <StatusBar barStyle={"light-content"} />
 }
