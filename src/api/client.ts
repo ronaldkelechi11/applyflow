@@ -9,6 +9,7 @@ export const axiosInstance = axios.create({
         'Content-Type': 'application/json',
     },
 });
+const ACCESS_TOKEN = "accessToken"
 
 const axiosAuthenticatedInstance = axios.create({
     baseURL: apiUrl,
@@ -28,13 +29,13 @@ const setAuthHeader = (token: string | null) => {
 
 // Set Token
 export const setTokens = async (token: string) => {
-    await SecureStore.setItemAsync('accessToken', token);
+    await SecureStore.setItemAsync(ACCESS_TOKEN, token);
     setAuthHeader(token);
 };
 
 // Fetch Token
 export const getStoredTokens = async () => ({
-    accessToken: await SecureStore.getItemAsync('accessToken'),
+    accessToken: await SecureStore.getItemAsync(ACCESS_TOKEN),
 });
 
 // Clear Token
